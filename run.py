@@ -1,16 +1,17 @@
 from src.game import Game
+import pygame
 
 def main():
     game = Game()
-    game2 = Game()
     game.start()
+    
 
     try:
         game.run()
     except KeyboardInterrupt:
         game.exit()
 
-
+    
 
 
 
