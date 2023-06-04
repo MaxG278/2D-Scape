@@ -2,6 +2,7 @@ from src.game import Game
 
 def main():
     game = Game()
+    game2 = Game()
     game.start()
 
     try:

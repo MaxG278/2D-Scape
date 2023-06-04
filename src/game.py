@@ -1,15 +1,22 @@
-"""
-eine klasse mit dem namen game, die soll eine funktion run eine funktion start und exit
- haben
-die sollten erst einmal leer sein. Die soll eine variable running haben, 
-und diese sollen in der run.py initialisiert werden.
-"""
+
 import time
 
 class Game:
     running = False
-    
+    _instance = False
 
+
+    @staticmethod
+    def get():
+        if not Game._instance:
+            Game()
+        return Game._instance
+
+    def __init__(self):
+        if Game._instance:
+            raise Exception("This class is a singleton")
+        else:
+            Game._instance = self
 
     
     def start(self):
